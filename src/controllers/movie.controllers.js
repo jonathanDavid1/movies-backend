@@ -60,9 +60,9 @@ const setActor = catchError(async (req, res) => {
     const { id } = req.params;
     const movie = await Movie.findByPk(id);
     if (!movie) return res.sendStatus(404);
-    await movie.setDirector(req.body);
-    const Director = await movie.getDirector();
-    return res.json(students);
+    await movie.setDirectors(req.body);
+    const directors = await movie.getDirectors();
+    return res.json(directors);
   });
 
 
